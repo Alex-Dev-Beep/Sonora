@@ -13,7 +13,7 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	// Static files: CSS, JavaScript, images, etc.
+	// static files: css, javascript, images, etc.
 	mux.Handle(
 		"/static/",
 		http.StripPrefix(
@@ -22,7 +22,7 @@ func main() {
 		),
 	)
 
-	// Home page
+	// home page
 	mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
 		err := pages.ExecuteTemplate(w, "home.html", nil)
 		if err != nil {
@@ -35,7 +35,7 @@ func main() {
 		}
 	})
 
-	// Search page
+	// search page
 	mux.HandleFunc("GET /search", func(w http.ResponseWriter, r *http.Request) {
 		err := pages.ExecuteTemplate(w, "search.html", nil)
 		if err != nil {
