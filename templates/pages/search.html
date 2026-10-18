@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching Music</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <h1 class="logo">
+            <i class="logo-icon" data-lucide="audio-lines"></i>
+            sonora
+        </h1>
+
+        <nav>
+            <a href="/" class="sidebar-button active">
+                <i data-lucide="house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="/search" class="sidebar-button">
+                <i data-lucide="search"></i>
+                <span>Search</span>
+            </a>
+
+            <a href="/library" class="sidebar-button">
+                <i data-lucide="library"></i>
+                <span>Library</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        
+    <div class="search-bar">
+        <i data-lucide="search"></i>
+        <input
+            type="search"
+            placeholder="search songs, artists, albums..."
+            aria-label="search music"
+        >
+    </div>
+
+    </main>
+
+    <footer class="player">
+        <div>
+            
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

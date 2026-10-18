@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -14,16 +13,38 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	mux.Handle("/static/", http.StripPrefix(
+	// Static files: CSS, JavaScript, images, etc.
+	mux.Handle(
 		"/static/",
-		http.FileServer(http.Dir("static")),
-	))
+		http.StripPrefix(
+			"/static/",
+			http.FileServer(http.Dir("static")),
+		),
+	)
 
+	// Home page
 	mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
 		err := pages.ExecuteTemplate(w, "home.html", nil)
 		if err != nil {
 			log.Printf("error rendering home: %v", err)
-			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			http.Error(
+				w,
+				"Internal server error",
+				http.StatusInternalServerError,
+			)
+		}
+	})
+
+	// Search page
+	mux.HandleFunc("GET /search", func(w http.ResponseWriter, r *http.Request) {
+		err := pages.ExecuteTemplate(w, "search.html", nil)
+		if err != nil {
+			log.Printf("error rendering search: %v", err)
+			http.Error(
+				w,
+				"Internal server error",
+				http.StatusInternalServerError,
+			)
 		}
 	})
 
