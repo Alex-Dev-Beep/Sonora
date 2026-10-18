@@ -8,7 +8,7 @@ import (
 
 func main() {
 	pages := template.Must(
-		template.ParseGlob("templates/pages/*.html"),
+		template.ParseGlob("*.html"),
 	)
 
 	mux := http.NewServeMux()

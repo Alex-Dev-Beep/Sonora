@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonora</title>
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>Searching Music</title>
+    <link rel="stylesheet" href="/static/css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -16,12 +15,12 @@
         </h1>
 
         <nav>
-            <a href="/" class="sidebar-button active">
+            <a href="/" class="sidebar-button">
                 <i data-lucide="house"></i>
                 <span>Home</span>
             </a>
 
-            <a href="/search" class="sidebar-button">
+            <a href="/search" class="sidebar-button active">
                 <i data-lucide="search"></i>
                 <span>Search</span>
             </a>
@@ -32,6 +31,19 @@
             </a>
         </nav>
     </aside>
+
+    <main class="content">
+        
+    <div class="search-bar">
+        <i data-lucide="search"></i>
+        <input
+            type="search"
+            placeholder="search songs, artists, albums..."
+            aria-label="search music"
+        >
+    </div>
+
+    </main>
 
     <footer class="player">
         <div>

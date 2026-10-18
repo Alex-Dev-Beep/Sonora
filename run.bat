@@ -1,2 +1,1 @@
-cd commands
-run.bat
+go run ./cmd
